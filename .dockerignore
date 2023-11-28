@@ -1,0 +1,6 @@
+.env
+tmp
+.vscode
+.github
+Makefile
+README.md
