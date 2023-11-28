@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/AlbertPuwadol/go-worker-template/config"
-	"github.com/AlbertPuwadol/go-worker-template/pkg/adapter"
-	"github.com/AlbertPuwadol/go-worker-template/pkg/repository"
-	"github.com/AlbertPuwadol/go-worker-template/pkg/service"
-	"github.com/AlbertPuwadol/go-worker-template/pkg/usecase"
+	"github.com/wisesight/kirin-worker/config"
+	"github.com/wisesight/kirin-worker/pkg/adapter"
+	"github.com/wisesight/kirin-worker/pkg/repository"
+	"github.com/wisesight/kirin-worker/pkg/service"
+	"github.com/wisesight/kirin-worker/pkg/usecase"
 	formatter "github.com/wisesight/spider-go-formatter"
 	"github.com/wisesight/spider-go-utilities/queue"
 )
@@ -34,7 +34,7 @@ func main() {
 	}
 	defer rabbitmqAdapter.CleanUp()
 
-	kiringRPCAdapter := adapter.NewGRPC()
+	kiringRPCAdapter := adapter.NewKiringRPC()
 
 	enrichmentRepository := repository.NewEnrichment(kiringRPCAdapter)
 	enrichmentUsecase := usecase.NewEnrichment(enrichmentRepository)

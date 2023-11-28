@@ -12,6 +12,8 @@ type Config struct {
 	ImageProcessingSplitMessageQueueName    string `env:"IMAGE_PROCESSING_SPLIT_MESSAGE_QUEUE_NAME"`
 	ImageProcessingSplitMessageExchangeName string `env:"IMAGE_PROCESSING_SPLIT_MESSAGE_EXCHANGE_NAME"`
 	ImageProcessingSplitMessageExchangeType string `env:"IMAGE_PROCESSING_SPLIT_MESSAGE_EXCHANGE_TYPE"`
+	KirinApiUri                             string `env:"KIRIN_API_URI"`
+	KirinApiToken                           string `env:"KIRIN_API_TOKEN"`
 }
 
 func NewConfig() Config {

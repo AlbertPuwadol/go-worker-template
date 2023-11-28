@@ -3,8 +3,8 @@ package usecase
 import (
 	"sync"
 
-	"github.com/AlbertPuwadol/go-worker-template/pkg/entity"
-	"github.com/AlbertPuwadol/go-worker-template/pkg/repository"
+	"github.com/wisesight/kirin-worker/pkg/entity"
+	"github.com/wisesight/kirin-worker/pkg/repository"
 	formatter "github.com/wisesight/spider-go-formatter"
 )
 

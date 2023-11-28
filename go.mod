@@ -1,4 +1,4 @@
-module github.com/AlbertPuwadol/go-worker-template
+module github.com/wisesight/kirin-worker
 
 go 1.18
 

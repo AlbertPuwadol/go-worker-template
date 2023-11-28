@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/AlbertPuwadol/go-worker-template/pkg/adapter"
-	"github.com/AlbertPuwadol/go-worker-template/pkg/entity"
+	"github.com/wisesight/kirin-worker/pkg/adapter"
+	"github.com/wisesight/kirin-worker/pkg/entity"
 	formatter "github.com/wisesight/spider-go-formatter"
 )
 
@@ -11,10 +11,10 @@ type Enrichment interface {
 }
 
 type enrichement struct {
-	enrichmentAdapter adapter.GRPC
+	enrichmentAdapter adapter.KiringRPC
 }
 
-func NewEnrichment(enrichmentAdapter adapter.GRPC) *enrichement {
+func NewEnrichment(enrichmentAdapter adapter.KiringRPC) *enrichement {
 	return &enrichement{enrichmentAdapter: enrichmentAdapter}
 }
 

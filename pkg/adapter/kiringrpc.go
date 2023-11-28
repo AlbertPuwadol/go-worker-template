@@ -4,20 +4,20 @@ import (
 	"time"
 )
 
-type GRPC interface {
+type KiringRPC interface {
 	GetNer() (map[string]interface{}, error)
 	GetSentiment() (map[string]interface{}, error)
 	GetTfIdf() (map[string]interface{}, error)
 }
 
-type gRPC struct {
+type kiringRPC struct {
 }
 
-func NewGRPC() *gRPC {
-	return &gRPC{}
+func NewKiringRPC() *kiringRPC {
+	return &kiringRPC{}
 }
 
-func (g gRPC) GetNer() (map[string]interface{}, error) {
+func (k kiringRPC) GetNer() (map[string]interface{}, error) {
 	time.Sleep(5 * time.Second)
 	var res map[string]interface{}
 	res = make(map[string]interface{})
@@ -29,7 +29,7 @@ func (g gRPC) GetNer() (map[string]interface{}, error) {
 	return res, nil
 }
 
-func (g gRPC) GetSentiment() (map[string]interface{}, error) {
+func (k kiringRPC) GetSentiment() (map[string]interface{}, error) {
 	time.Sleep(1 * time.Second)
 	var res map[string]interface{}
 	res = make(map[string]interface{})
@@ -38,7 +38,7 @@ func (g gRPC) GetSentiment() (map[string]interface{}, error) {
 	return res, nil
 }
 
-func (g gRPC) GetTfIdf() (map[string]interface{}, error) {
+func (k kiringRPC) GetTfIdf() (map[string]interface{}, error) {
 	time.Sleep(10 * time.Second)
 	var res map[string]interface{}
 	res = make(map[string]interface{})
