@@ -6,14 +6,14 @@ import (
 )
 
 type Config struct {
-	RabbitMQURI                             string `env:"RABBITMQ_URI"`
-	EnrichmentQueueName                     string `env:"ENRICHMENT_QUEUE_NAME"`
-	EnrichmentErrorQueueName                string `env:"ENRICHMENT_ERROR_QUEUE_NAME"`
-	ImageProcessingSplitMessageQueueName    string `env:"IMAGE_PROCESSING_SPLIT_MESSAGE_QUEUE_NAME"`
-	ImageProcessingSplitMessageExchangeName string `env:"IMAGE_PROCESSING_SPLIT_MESSAGE_EXCHANGE_NAME"`
-	ImageProcessingSplitMessageExchangeType string `env:"IMAGE_PROCESSING_SPLIT_MESSAGE_EXCHANGE_TYPE"`
-	KirinApiUri                             string `env:"KIRIN_API_URI"`
-	KirinApiToken                           string `env:"KIRIN_API_TOKEN"`
+	RabbitMQURI           string `env:"RABBITMQ_URI"`
+	ConsumeQueueName      string `env:"CONSUME_QUEUE_NAME"`
+	ConsumeErrorQueueName string `env:"CONSUME_ERROR_QUEUE_NAME"`
+	PublishQueueName      string `env:"PUBLISH_QUEUE_NAME"`
+	PublishExchangeName   string `env:"PUBLISH_EXCHANGE_NAME"`
+	PublishExchangeType   string `env:"PUBLISH_EXCHANGE_TYPE"`
+	GRPCUri               string `env:"GRPC_URI"`
+	GRPCToken             string `env:"GRPC_TOKEN"`
 }
 
 func NewConfig() Config {

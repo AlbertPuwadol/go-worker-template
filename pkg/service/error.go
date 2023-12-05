@@ -2,22 +2,12 @@ package service
 
 import (
 	"context"
-	"encoding/json"
-	"log"
 
+	"github.com/AlbertPuwadol/go-worker-template/pkg/adapter"
 	"github.com/rabbitmq/amqp091-go"
-	"github.com/wisesight/spider-go-utilities/queue"
 )
 
-func PublishError(ctx context.Context, queueAdapter queue.RabbitMQ, queueName string, msg amqp091.Delivery, errInfo error) {
-	var payload map[string]interface{}
-	payload = make(map[string]interface{})
-	payload["body"] = string(msg.Body)
-	body, err := json.Marshal(payload)
-	if err != nil {
-		log.Println(err.Error())
-	}
-
-	queueAdapter.PublishError(ctx, queueName, body, errInfo)
+func PublishError(ctx context.Context, queueAdapter adapter.RabbitMQ, queueName string, msg amqp091.Delivery, errInfo error) {
+	queueAdapter.PublishError(ctx, queueName, msg.Body, errInfo)
 	msg.Nack(false, false)
 }

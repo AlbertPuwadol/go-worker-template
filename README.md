@@ -1,2 +1,2 @@
-# kirin-worker
-New kirin worker for data enrichment through Spider pipeline
+# go-worker-template
+New go worker template apply with gRPC
